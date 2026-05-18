@@ -11,11 +11,13 @@ cask "ai-software-studio" do
   # No installer exists yet — `brew install --cask ronimoe/tap/ai-software-studio` will fail
   # with a download error, which is intentional until v0.5.
 
+  depends_on macos: :big_sur
+
   app "AI Software Studio.app"
 
   zap trash: [
     "~/Library/Application Support/AI Software Studio",
-    "~/Library/Preferences/studio.aisoftware.app.plist",
     "~/Library/Caches/studio.aisoftware.app",
+    "~/Library/Preferences/studio.aisoftware.app.plist",
   ]
 end
